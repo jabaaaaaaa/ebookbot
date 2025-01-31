@@ -1,11 +1,12 @@
+import os
 import logging
 from telegram import Update
 from telegram.ext import Application, CommandHandler, MessageHandler, filters, ContextTypes
 
-# Configuration (REPLACE THESE!)
-BOT_TOKEN = "YOUR_TELEGRAM_BOT_TOKEN"
-AFFILIATE_LINK = "https://your-affiliate-link.com"  # e.g., Amazon Associates link
-EBOOK_URL = "https://your-ebook-direct-download-link.pdf"  # Host eBook on GitHub/GDrive
+# Fetch token and links from environment variables
+BOT_TOKEN = os.getenv("BOT_TOKEN")  # Your bot token
+AFFILIATE_LINK = os.getenv("AFFILIATE_LINK")  # Your affiliate link
+EBOOK_URL = os.getenv("EBOOK_URL")  # Your eBook URL
 
 # Track user progress
 user_progress = {}
